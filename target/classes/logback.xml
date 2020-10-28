@@ -1,0 +1,23 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+<!--            <pattern>%date{HH:mm:ss} |-%level{15} - %logger - %message%n%xException{2}</pattern>-->
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+            <!--<pattern>%date{yyyy-MM-dd HH:mm:ss} - [%level{15}] - from %logger %message%n%xException{5}</pattern>-->
+        </encoder>
+    </appender>
+
+
+    <logger name="org.apache.kafka" level="DEBUG"/>
+    <logger name="org.apache.kafka.clients.NetworkClient" level="INFO"/>
+    <logger name="org.apache.kafka.clients.FetchSessionHandler" level="INFO"/>
+    <logger name="org.apache.kafka.clients.consumer.internals.Fetcher" level="INFO"/>
+    <logger name="org.apache.kafka.clients.consumer.internals.AbstractCoordinator" level="INFO"/>
+    <logger name="org.apache.kafka.common.metrics" level="INFO"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
